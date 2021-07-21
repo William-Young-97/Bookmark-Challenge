@@ -7,3 +7,4 @@ gem 'capybara'
 gem 'selenium-webdriver'
 gem 'chromedriver-helper'
 gem "webdrivers"
+gem "pg"

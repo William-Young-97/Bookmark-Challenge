@@ -1,7 +1,10 @@
-class Logic 
+require 'pg'
 
+class Logic 
   def self.all
-    ["Wikipedia", "Cooking Channel", "Seeking Alpha"]
+    conn = PG.connect( dbname: 'bookmark_manager')
+    alottadata = conn.exec( "SELECT * FROM bookmarks")
+    alottadata.map { | row | row['url'] }
   end
-  
+
 end

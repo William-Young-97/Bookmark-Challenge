@@ -11,12 +11,12 @@ class Bookmarks < Sinatra::Base
     erb(:index)
   end
 
-  run! if app_file == $0
-
   get '/bookmarks' do
     @logic = Logic.all
     erb(:show_bookmarks)
   end
+
+  run! if app_file == $0
 
 end
 
