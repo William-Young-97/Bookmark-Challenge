@@ -11,4 +11,11 @@ describe Logic do
       expect(logic).to include('http://www.makersacademy.com/')
     end
   end
+
+  describe '.create' do
+    it 'Creates a new bookmark' do
+      Logic.create('http://www.ex.com')
+      expect(Logic.all).to include('http://www.ex.com')
+    end
+  end
 end

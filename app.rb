@@ -16,8 +16,13 @@ class Bookmarks < Sinatra::Base
     erb(:show_bookmarks)
   end
 
-  run! if app_file == $0
+  post '/create_bookmark' do
+    Logic.create(params[:url])
+    @logic = Logic.all
+    erb(:show_bookmarks)
+  end
 
+  run! if app_file == $0
 end
 
 
